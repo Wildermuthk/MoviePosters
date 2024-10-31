@@ -19,7 +19,7 @@
         android:background="@drawable/poster_background"
         android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/TextName"
+        app:layout_constraintTop_toTopOf="@id/textName"
         />
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -35,7 +35,7 @@
         />
 
     <TextView
-        android:id="@+id/TextName"
+        android:id="@+id/textName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -57,23 +57,23 @@
         android:isIndicator="true"
         android:numStars="5"
         android:theme="@style/RatingBar"
-        app:layout_constraintStart_toStartOf="@id/TextName"
-        app:layout_constraintTop_toBottomOf="@id/TextName"/>
+        app:layout_constraintStart_toStartOf="@id/textName"
+        app:layout_constraintTop_toBottomOf="@id/textName"/>
 
     <TextView
-        android:id="@+id/TextCreatedBy"
+        android:id="@+id/textCreatedBy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:ellipsize="end"
         android:textSize="15sp"
         android:textColor="@color/textPrimary"
-        app:layout_constraintEnd_toEndOf="@id/TextName"
-        app:layout_constraintStart_toStartOf="@id/TextName"
+        app:layout_constraintEnd_toEndOf="@id/textName"
+        app:layout_constraintStart_toStartOf="@id/textName"
         app:layout_constraintTop_toTopOf="@id/ratingBar"/>
 
     <TextView
-        android:id="@+id/TextStory"
+        android:id="@+id/textStory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -81,9 +81,9 @@
         android:ellipsize="end"
         android:textSize="13sp"
         android:textColor="@color/textPrimary"
-        app:layout_constraintEnd_toEndOf="@id/TextName"
-        app:layout_constraintStart_toStartOf="@id/TextName"
-        app:layout_constraintTop_toTopOf="@id/TextCreatedBy"/>
+        app:layout_constraintEnd_toEndOf="@id/textName"
+        app:layout_constraintStart_toStartOf="@id/textName"
+        app:layout_constraintTop_toTopOf="@id/textCreatedBy"/>
 
     <ImageView
         android:id="@+id/imageSelected"
@@ -95,7 +95,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/viewBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="viewBackground"/>
+        app:layout_constraintTop_toTopOf="@id/viewBackground"/>
 
 
 
