@@ -17,30 +17,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterViewHolder>{
-
-    private List<Poster> posterList;
-    private PostersListener posterListener;
-
-    public PosterAdapter(List<Poster> posterList, PostersListener posterListener) {
-        this.posterList = posterList;
-        this.posterListener = posterListener;
-    }
-
     @NonNull
     @Override
     public PosterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new PosterViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_poster, parent, false));
     }
-
     @Override
     public void onBindViewHolder(@NonNull PosterViewHolder holder, int position) {
         holder.bindPosters(posterList.get(position));
     }
-
     @Override
     public int getItemCount() {
         return posterList.size();
     }
+
+    private List<Poster> posterList;
+
+    public PosterAdapter(List<Poster> posterList, PostersListener posterListener) {
+        this.posterList = posterList;
+        this.posterListener = posterListener;
+    }
+    private PostersListener posterListener;
+
 
     public List<Poster> getSelectedPosters(){
         List<Poster> selectedPosters = new ArrayList<>();
@@ -91,21 +89,20 @@ public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterView
             layoutPosters.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(poster.isSelected){
-                        viewBackground.setBackgroundResource(R.drawable.poster_selected_background);
+                    if(poster.isSelected) {
+                        viewBackground.setBackgroundResource(R.drawable.poster_background);
                         imageSelected.setVisibility(View.GONE);
                         poster.isSelected = false;
-                        if(getSelectedPosters().isEmpty()){
+                        if (getSelectedPosters().isEmpty()) {
                             posterListener.onPosterAction(false);
-                        } else {
+                        }
+                    }else {
                             viewBackground.setBackgroundResource(R.drawable.poster_selected_background);
                             imageSelected.setVisibility(View.VISIBLE);
                             poster.isSelected = true;
                             posterListener.onPosterAction(true);
                         }
                     }
-
-                }
             });
         }
 

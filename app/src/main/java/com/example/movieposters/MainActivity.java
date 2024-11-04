@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements PostersListener{
         alice.createdBy = "Disney";
         alice.rating = 5f;
         alice.story = "A girl falls down a rabbit hole into a fantasy world.";
-
         posterList.add(alice);
 
         Poster martian = new Poster();
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements PostersListener{
         martian.createdBy = "Ridley Scott";
         martian.rating = 4f;
         martian.story = "A man gets left on Mars and must survive on his own.";
-
         posterList.add(martian);
 
         final PosterAdapter postersAdapter = new PosterAdapter(posterList, this);
